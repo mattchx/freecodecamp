@@ -1,0 +1,36 @@
+function convertToRoman(num) {
+let units =[ '','I','II','III','IV','V','VI','VII','VIII','IX'];
+let tens = ['','X','XX','XXX','XL','L','LX','LXX','LXXX','XC'];
+let hundreds =['','C','CC','CCC','CD','D','DC','DCC','DCCC','CM'];
+function thousands () {
+  let i = 0;
+  let m = '';
+  while (i < num[0]) {
+    i++
+    m = m + "M";
+  }
+  return m;
+}
+
+num = (num).toString()
+.split('')
+.map(digit => parseInt(digit));
+console.log(num)
+
+let numSize = num.length;
+switch (numSize) {
+  case 1:
+    return units[num[0]];
+  case 2:
+    return tens[num[0]] + units[num[1]];
+  case 3:
+    return hundreds[num[0]] + tens[num[1]] + units[num[2]];
+  case 4:
+    return thousands(num) + hundreds[num[1]] + tens[num[2]] + units[num[3]];
+  default:  
+    return undefined;
+    break;
+}
+}
+
+convertToRoman(2999);
