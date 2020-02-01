@@ -1,0 +1,21 @@
+function palindrome(str) {
+  // Good luck!
+  let arr2 = []; //backward Array
+  let arr1 = //forward(normal) Array
+  str.toLowerCase()
+  .replace(/[^a-zA-Z0-9]/g, '')
+  .split('');
+  console.log(arr1);
+
+  for (let k = arr1.length-1; k >= 0; k--){
+      arr2.push(arr1[k]);
+  };
+  console.log(arr2);
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) return false;
+  }
+  return true;
+
+}
+palindrome("RaceCar")
