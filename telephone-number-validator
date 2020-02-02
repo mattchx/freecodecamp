@@ -1,0 +1,15 @@
+function telephoneCheck(str) {
+  // Good luck!
+//https://regexr.com/
+//###-###-#### (=￣ ρ￣=) ..zzZZ
+
+let regex1 = 
+/^(1\s?)?(\(\d{3}\)|\d{3})[-|\s]?[\d]{3}[-|\s]?[\d]{4}$/;
+let isPhoneNum = regex1.test(str);// && regex2.test(str)? true : false;
+console.log(isPhoneNum)
+
+return isPhoneNum;
+
+}
+
+telephoneCheck("1(292)5909999");
